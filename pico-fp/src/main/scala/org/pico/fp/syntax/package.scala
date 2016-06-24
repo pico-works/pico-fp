@@ -5,7 +5,7 @@ import scala.language.higherKinds
 package object syntax {
   implicit class ApplicativeOps_Gggv37e[A](val self: A) {
     @inline
-    final def point[F[_]](value: A)(implicit ev: Applicative[F]) = ev.point(value)
+    final def point[F[_]](implicit ev: Applicative[F]) = ev.point(self)
   }
 
   implicit class BindOps_dYso3C7[F[_], A](val self: F[A]) {
@@ -16,11 +16,6 @@ package object syntax {
   implicit class FunctorOps_Af6AfhR[F[_], A](val self: F[A]) extends AnyVal {
     @inline
     final def map[B](f: A => B)(implicit ev: Functor[F]): F[B] = ev.map(self)(f)
-  }
-
-  implicit class ApplicativeOps_4qFxAUN[A](val self: A) extends AnyVal {
-    @inline
-    final def point[Z[_]](implicit ev: Applicative[Z]): Z[A] = ev.point(self)
   }
 
   implicit class ApplyOps_aTbBqLC[F[_], A](val self: F[A]) {
