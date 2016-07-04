@@ -78,4 +78,12 @@ package object syntax {
     @inline
     final def applyIn[R](f: (A, B, C, D, E, F) => R)(implicit ev: Apply[Z]): Z[R] = applyIn(f.curried)
   }
+
+  implicit class SemigroupOps_dTf9kCT[A](val self: A) extends AnyVal {
+    @inline
+    final def |+|(that: => A)(implicit ev: Semigroup[A]): A = ev.append(self, that)
+  }
+
+  @inline
+  final def mzero[A](implicit A: Monoid[A]): A = A.zero
 }
