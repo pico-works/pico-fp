@@ -84,6 +84,16 @@ package object syntax {
     final def |+|(that: => A)(implicit ev: Semigroup[A]): A = ev.append(self, that)
   }
 
+  implicit class EqualOps_dTf9kCT[A](val self: A) extends AnyVal {
+    @inline
+    final def ===(that: => A)(implicit ev: Equal[A]): Boolean = ev.equal(self, that)
+  }
+
+  implicit class OrderOps_dTf9kCT[A](val self: A) extends AnyVal {
+    @inline
+    final def ?|?(that: => A)(implicit ev: Order[A]): Ordering = ev.order(self, that)
+  }
+
   @inline
   final def mzero[A](implicit A: Monoid[A]): A = A.zero
 }
