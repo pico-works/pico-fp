@@ -8,6 +8,8 @@ trait ToAllOps extends ToOps
     with ToBindOps
     with ToEqualOps
     with ToFunctorOps
+    with ToMonadOps
+    with ToMonoidOps
     with ToOrderOps
     with ToSemigroupOps
     with ToTagOps
