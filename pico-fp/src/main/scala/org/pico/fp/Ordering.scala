@@ -25,3 +25,16 @@ case object GT extends Ordering {
   override def toInt: Int = 1
   override def name: String = "GT"
 }
+
+object Ordering {
+  @inline
+  final def of(comparison: Int): Ordering = {
+    if (comparison == 0) {
+      EQ
+    } else if (comparison < 0) {
+      LT
+    } else {
+      GT
+    }
+  }
+}
