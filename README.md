@@ -13,5 +13,5 @@ Add this to your SBT project:
 ```
 resolvers += "dl-john-ky-releases" at "http://dl.john-ky.io/maven/releases"
 
-libraryDependencies += "org.pico" %%  "pico-fp" % "0.0.1"
+libraryDependencies += "org.pico" %%  "pico-fp" % "1.0.0"
 ```
