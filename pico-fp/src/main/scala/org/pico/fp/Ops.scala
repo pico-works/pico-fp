@@ -1,4 +1,4 @@
-package org.pico.fp.impl.syntax
+package org.pico.fp
 
 trait Ops[A] {
   def self: A
