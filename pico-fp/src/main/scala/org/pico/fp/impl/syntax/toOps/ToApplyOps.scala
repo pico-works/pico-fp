@@ -4,7 +4,7 @@ import org.pico.fp.impl.syntax.ops._
 
 import scala.language.{higherKinds, implicitConversions}
 
-trait ToApplyOps {
+trait ToApplyOps extends ToFunctorOps {
   @inline
   implicit final def applyOps_aTbBqLC[F[_], A](self: F[A]): ApplyOps_aTbBqLC[F, A] = {
     new ApplyOps_aTbBqLC[F, A](self)

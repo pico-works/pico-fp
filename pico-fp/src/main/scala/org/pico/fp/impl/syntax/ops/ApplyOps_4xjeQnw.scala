@@ -2,7 +2,6 @@ package org.pico.fp.impl.syntax.ops
 
 import org.pico.fp.Apply
 import org.pico.fp.syntax.apply._
-import org.pico.fp.syntax.functor._
 
 import scala.language.higherKinds
 
