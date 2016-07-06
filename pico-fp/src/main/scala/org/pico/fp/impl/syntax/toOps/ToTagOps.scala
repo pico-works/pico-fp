@@ -25,4 +25,10 @@ trait ToTagOps {
   implicit final def untaggedOps_proPqRs[V, F[_, _], A](self: F[A, V]): UntaggedOps_proPqRs[V, F, A] = {
     new UntaggedOps_proPqRs[V, F, A](self)
   }
+
+  @inline
+  final def tag[U] = new Tagger[U]
+
+  @inline
+  final def tagF[U] = new TaggerF[U]
 }
